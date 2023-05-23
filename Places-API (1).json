@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "7d310b41-fd97-4db5-8a91-ecf90284d7ab",
+		"name": "NS x ROCvA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19803449"
+	},
+	"item": [
+		{
+			"name": "All trains",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{Ocp-Apim-Subscription-Key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gateway.apiportal.ns.nl/virtual-train-api/api/vehicle",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"apiportal",
+						"ns",
+						"nl"
+					],
+					"path": [
+						"virtual-train-api",
+						"api",
+						"vehicle"
+					],
+					"query": [
+						{
+							"key": "features",
+							"value": "bus",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTrainInformationForRitnummer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{Ocp-Apim-Subscription-Key}}",
+						"type": "text"
+					},
+					{
+						"key": "142",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gateway.apiportal.ns.nl/virtual-train-api/api/v1/trein/1871?features=drukte",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"apiportal",
+						"ns",
+						"nl"
+					],
+					"path": [
+						"virtual-train-api",
+						"api",
+						"v1",
+						"trein",
+						"1871"
+					],
+					"query": [
+						{
+							"key": "features",
+							"value": "drukte"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all locations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{Ocp-Apim-Subscription-Key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gateway.apiportal.ns.nl/places-api/v2/places",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"apiportal",
+						"ns",
+						"nl"
+					],
+					"path": [
+						"places-api",
+						"v2",
+						"places"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ov fiets checken",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "{{Ocp-Apim-Subscription-Key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://gateway.apiportal.ns.nl/places-api/v2/ovfiets?station_code=ASA",
+					"protocol": "https",
+					"host": [
+						"gateway",
+						"apiportal",
+						"ns",
+						"nl"
+					],
+					"path": [
+						"places-api",
+						"v2",
+						"ovfiets"
+					],
+					"query": [
+						{
+							"key": "station_code",
+							"value": "ASA"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Ocp-Apim-Subscription-Key",
+			"value": "4d11187dfff241cc8dc22add812c40ff",
+			"type": "string"
+		}
+	]
+}
